@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script> function login() {
+        var use = document.getElementById("User").value;
+        var pass = document.getElementById("password").value;
+        if (use == "joashua" && pass =="nope") {
+            window.location.href ="dashboard.html";
+            alert("succesfully logged in");
+        }
+        else {
+            alert("incorrect to username or password");
+        }
+    }</script>
+    <link rel="stylesheet" href="loginfinal.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="dashboard.html" method="POST">
+            <input type="text" name="username" id="User" placeholder="Username" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <div class="show-password">
+                <input type="checkbox" id="showPassword"> Show Password
+            </div>
+            <!-- Login Button -->
+            <button type="submit" class="login-btn" onclick="login()">Log In</button>
+        </form>
+    </div>
+
+    <script>
+        const showPasswordCheckbox = document.getElementById('showPassword');
+        const passwordField = document.getElementById('password');
+        showPasswordCheckbox.addEventListener('change', function() {
+            if (showPasswordCheckbox.checked) {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+           
+    function showpass(checkbox) {
+        var checkbox = document.getElementById("check");
+        var password = document.getElementById("pass");
+        if (checkbox.checked == true) {
+            password.setAttribute("type", "text");
+        }
+        else {
+            password.setAttribute("type", "password");
+        }
+    }
+    
+        });
+    </script>
+
+</body>
+</html>

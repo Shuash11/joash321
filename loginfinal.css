@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #2e2e2e, #121212);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    overflow: hidden;
+}
+
+/* Gradient Animation for Background */
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, #6c63ff, #3b3b3b);
+    }
+    50% {
+        background: linear-gradient(135deg, #6c63ff, #2a2a2a);
+    }
+    100% {
+        background: linear-gradient(135deg, #6c63ff, #3b3b3b);
+    }
+}
+
+/* Container for the login form (Glassmorphism effect) */
+.login-container {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 40px 50px;
+    width: 80vw;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    animation: slideUp 1s ease-out, floatEffect 2s ease-in-out infinite;
+}
+
+/* Slide Up Animation for Form */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Effect for the Form */
+@keyframes floatEffect {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.login-container h2 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeInText 1s ease-out forwards 0.3s, moveUp 1s ease-out forwards;
+}
+
+/* Fade In Animation for Heading */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Move Up Animation for Heading */
+@keyframes moveUp {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Input Fields with Complex Animations */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    outline: none;
+    text-align: center;
+    transform: scale(1);
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border: 1px solid #6c63ff;
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.8);
+    transform: scale(1.05) translateX(5px);
+}
+
+input[type="text"]:hover, input[type="password"]:hover {
+    background-color: #333;
+    transform: scale(1.03);
+}
+
+/* Show Password Toggle */
+.show-password {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.show-password input {
+    width: auto;
+    margin-right: 8px;
+}
+
+/* Login Button with Floating Animation */
+.login-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 20px;
+    background-color: #6c63ff;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    animation: buttonFloat 2s ease-in-out infinite;
+}
+
+/* Button Hover and Active States */
+.login-btn:hover {
+    background-color: #5a52e2;
+    transform: scale(1.05) translateY(-5px);
+}
+
+.login-btn:active {
+    background-color: #4a42c2;
+    transform: scale(0.98) translateY(2px);
+}
+
+/* Floating Animation for Button */
+@keyframes buttonFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .login-container {
+        width: 90vw;
+        padding: 30px 40px;
+    }
+
+    .login-container h2 {
+        font-size: 2rem;
+    }
+
+    input[type="text"], input[type="password"] {
+        font-size: 1rem;
+    }
+
+    .login-btn {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+    function checker() {
+        var r = confirm('are you sure you want to log-out?');
+        if (r == false) {
+            event.preventDefault();
+        }
+        else {
+            window.location.href = "index.html"
+        }
+
+    }
+</script>
+<head>
+     
+    <link rel="stylesheet" href="dashboard.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Dashboard</div>
+      <div>
+        <a href="about.html">Home</a>
+        <a href="about2.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#" onclick="checker()">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="dashboard-content">
+      <h2>Summary</h2>
+      <div class="cards-container">
+        <div class="card">
+          <img src="pic.jpg" alt="Card Image 1">
+          <h3>Home?</h3>
+          <p>In this section you will know the developer of this website. If you want to go to the hompage 
+            just click the home navbar</p>
+        </div>
+        <div class="card">
+          <img src="logo.jfif" alt="Card Image 2">
+          <h3>About?</h3>
+          <p>In this section you will know what is this website all about.If you want to go to the about section 
+            just click the about navbar.
+          </p>
+        </div>
+        <div class="card">
+          <img src="battleband.jpg" alt="Card Image 3">
+          <h3>Gallery?</h3>
+          <p>In this Section you will see the collection of images that the developer gathered .</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
